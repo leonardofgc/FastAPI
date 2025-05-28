@@ -17,5 +17,6 @@ def test_root_deve_retornar_ola_mundo():
 
 def test_helloword_deve_retornar_o_html():
     client = TestClient(app)
-    response = client.get('/helloworld')
-    assert response.text == '<b>Hello World</b>'
+    response = client.get('/exercicio-html')
+    assert response.status_code == HTTPStatus.OK
+    assert '<h1> Olá Mundo </h1>' in response.text
